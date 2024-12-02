@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Clock</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="clock, analog, real, time, ghari, ghori, shomay, shomoy, watch, what, is, mazin">
+        <meta name="description" content="A real-time analog clock">
+        <meta name="author" content="Mazin Mikail Khan">
+        <link rel="stylesheet" href="clock-style.css">
+        <link rel="stylesheet" href="dropdown.css">
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/109/109613.png">
+        <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/109/109613.png">
+        <style>
+            .content{
+                height: 10rem;
+            }
+        </style>
+        <script>
+            var nnn = "normal";
+        </script>
+        <script src="preloader.js"></script>
+    </head>
+    <body onload="loadpage()">
+        <div id="preloader-container">
+            <div id="preloader"></div>
+        </div>
+        <header>
+            <h1>Clock</h1>
+            <p>See the time</p>
+            <div class="dropdown-container">
+                <div class="btn">
+                    <span>Settings</span>
+                </div>
+                <div class="content">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="Digital.html">
+                                    <span>Digital</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="change()">
+                                    <span id="mode">Tick</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Grandfather-clock.html">
+                                    <span>Vintage</span>
+                                </a>
+                            </li>
+                            <li>
+                                <button onclick="numberchange()">
+                                    <span id="numbermode">Roman</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main id="main" style="visibility:hidden;">
+            <div class="clock-container">
+                <div id="clock">
+                    <div class="stick-holder" id="hr-st">
+                        <div class="hr stick"></div>
+                    </div>
+                    <div class="stick-holder" id="min-st">
+                        <div class="min stick"></div>
+                    </div>
+                    <div class="stick-holder" id="sec-st">
+                        <div class="sec stick"></div>
+                    </div>
+                    <div class="pivot">
+                    </div>
+                    <!--NOTE: careful about the difference between "l" (L) and "1" (ONE) for id names of the following <span>s-->
+                    <span id="l1" style="top: 7%; right: 28%;">1</span>
+                    <span id="l2" style="top: 21%; right: 11%;">2</span>
+                    <span id="l3" style="top: 42%; right: 3%;">3</span>
+                    <span id="l4" style="top: 63%; right: 11%;">4</span>
+                    <span id="l5" style="top: 78%; right: 27%;">5</span>
+                    <span id="l6" style="top: 85%; left: 47.5%;">6</span>
+                    <span id="l7" style="top: 78%; left: 27%;">7</span>
+                    <span id="l8" style="top: 63%; left: 11%;">8</span>
+                    <span id="l9" style="top: 42%; left: 6%;">9</span>
+                    <span id="l10" style="top: 21%; left: 11%;">10</span>
+                    <span id="l11" style="top: 6%; left: 26%;">11</span>
+                    <span id="l12" style="top: 0%; left: 46%;">12</span>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <h2>About</h2>
+            <p>A Mazin Mikail Khan Production</p>
+            <h2>Source of icon</h2>
+            <a href="https://cdn-icons-png.flaticon.com/512/109/109613.png">https://cdn-icons-png.flaticon.com/512/109/109613.png</a>
+            <h2>Font</h2>
+            <p>Mukta from google font</p>
+            <a href="https://fonts.googleapis.com/css2?family=Mukta&family=Roboto&display=swap">Mukta</a>
+        </footer>
+        <script src="Analog.js"></script>
+        <script src="changer.js"></script>
+        <script src="numberchanger.js"></script>
+    </body>
+</html>

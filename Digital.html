@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Clock</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="digital, clock, time, mazin, ghari, ghori, shomoy, shomay">
+        <meta name="description" content="A digital clock">
+        <link rel="stylesheet" href="dropdown.css">
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/109/109613.png">
+        <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/109/109613.png">
+        <style>
+            /*NOTE: the root font-size (rem value) is lowered in media queries*/
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                background-color: #002;
+                min-height: 100%;
+                min-height: 100vh;
+            }
+            header{
+                padding: 3rem;
+                min-height: 20vh;
+                display: flex;
+                align-items: center;
+            }
+            h1, noscript{
+                font: 5rem 'Agency FB', 'arial narrow', arial, helvetica, sans-serif;
+                letter-spacing: 0.5rem;
+                color: #f00;
+            }
+            @font-face{
+                src: url('digital-7.ttf');
+                font-family: 'digital-7';
+            }
+            #time{
+                font: 9rem 'digital-7', 'Agency FB', 'courier new', courier, monospace;
+                color: #eee;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: nowrap;
+                letter-spacing: 2px;
+            }
+            #time-container, main{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                top: 10vh;
+            }
+            main{
+                min-height: 80vh;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+            footer{
+                background-color: #000;
+                color: #fff;
+                font: 16px arial, helvetica, sans-serif;
+                padding: 2rem;
+                text-align: center;
+            }
+            footer h2, footer h3{
+                font-weight: bold;
+            }
+            h2, h3, li, p, ol, dd, dt{
+                margin: 1rem;
+            }
+            footer a{
+                color: lightblue;
+            }
+            @media screen and (max-width: 717px){
+                :root{
+                    font-size: 14px;
+                }
+            }
+            @media screen and (max-width: 600px){
+                :root{
+                    font-size: 10px;
+                }
+                .dropdown-container{
+                    right: 25px !important;
+                }
+            }
+            @media screen and (max-width: 341px){
+                footer{
+                    font-size: 8px;
+                }
+            }
+            @media screen and (max-width: 300px){
+                :root{
+                    font-size: 8px;
+                }
+            }
+            @media screen and (max-width: 240px){
+                :root{
+                    font-size: 6px;
+                }
+            }
+
+        </style>
+        <!--style for fixing dropdown-->
+        <style>
+            .dropdown-container{
+                position: absolute;
+                top: 35px;
+                right: 43px;
+            }
+            .content li{
+                position: relative;
+                right: 1rem;
+            }
+            .content{
+                height: 5rem;
+            }
+            #link-a, #link-b{
+                position: relative;
+            }
+            #link-a{
+                top: 1rem;
+            }
+            #link-b{
+                bottom: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Digital clock</h1>
+            <div class="dropdown-container" style="transform: scale(1.5);">
+                <div class="btn">
+                    <span>Settings</span>
+                </div>
+                <div class="content">
+                    <nav>
+                        <ul>
+                            <li id="link-a">
+                                <a href="Analog.html">
+                                    <span>Analog</span>
+                                </a>
+                            </li>
+                            <li id="link-b">
+                                <a href="Grandfather-clock.html">
+                                    <span>Vintage</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main>
+            <noscript>Sorry, this page will not work without javascript</noscript>
+            <div id="time-container" style="display: none;">
+                <p id="time"></p>
+            </div>
+        </main>
+        <footer>
+            <h2 id="about">About</h2>
+            <p>A Mazin Mikail Khan Production</p>
+            <h3>Technologies/external content used</h3>
+            <dl>
+                <dt>Digital-7 font</dt>
+                <dd>Src: <a href="http://www.styleseven.com/" target="_blank">http://www.styleseven.com/</a></dd>
+                <dd>Author: Sizenko Alexander</dd>
+                <h2>About</h2>
+                <p>A Mazin Mikail Khan Production</p>
+                <h2>Source of icon</h2>
+                <a href="https://cdn-icons-png.flaticon.com/512/109/109613.png">https://cdn-icons-png.flaticon.com/512/109/109613.png</a>
+                <h2>Font</h2>
+                <p>Mukta from google font</p>
+                <a href="https://fonts.googleapis.com/css2?family=Mukta&family=Roboto&display=swap">Mukta</a>
+        </footer>
+            </dl>
+        </footer>
+        <script>
+            function showTime(){
+                const d = new Date();
+                document.getElementById('time-container').style.display = "flex";
+                let clock = document.getElementById('time');
+                let hr = d.getHours().toString().padStart(2, "0");
+                let min = d.getMinutes().toString().padStart(2, "0");
+                let seconds = d.getSeconds().toString().padStart(2, "0");
+                clock.innerHTML = "<span>" + hr + ":" + min + ":" + seconds + "<span>";
+            }
+            showTime();
+            setInterval(showTime, 1000);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,182 @@
+/*NOTE: the root font-size (rem value) is lowered in media queries*/
+@import url('https://fonts.googleapis.com/css2?family=Mukta&family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mukta', verdana, sans-serif;
+    font-size: 1.5rem;
+}
+body{
+    background-color: #fff;
+    background-image: conic-gradient(from 30deg at 60% 40%, #00f, #0ff, #0f0, #0ff, #00f);
+}
+h1{
+    font-size: 3rem;
+    color: #000;
+}
+.clock-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+header{
+    min-height: 20vh;
+    position: relative;
+    width: inherit;
+}
+#clock{
+    width: 30vw;
+    height: calc(30vw);
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 10vh;
+    bottom: 50px;
+}
+#clock > .stick-holder{
+    width: inherit;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    animation-timing-function: linear !important;
+    animation-delay: 0s;
+    animation-iteration-count: Infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+.stick{
+    background-color: #000;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+}
+.hr{
+    height: 13px;
+    width: 25%;
+}
+.min{
+    width: 35%;
+    height: 10px;
+}
+.sec{
+    width: 45%;
+    height: 5px;
+}
+.number{
+    font-size: 3rem;
+}
+#clock > span{
+    position: absolute;
+    font-size: 3vw;
+}
+footer{
+    background-color: #555;
+    width: 100%;
+    padding: 2rem;
+    color: #fff;
+    text-align: center;
+}
+footer a{
+    color: lightblue;
+}
+footer h2{
+    font-weight: bold;
+}
+footer a, footer h2, footer p{
+    font-size: 1rem;
+}
+h1, h2, p{
+    margin: 1rem;
+}
+.pivot{
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 49.5%;
+    left: 49.5%;
+    width: 0.5vw;
+    height: calc(0.5vw);
+    z-index: 2;
+}
+#preloader-container{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes preload{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+#preloader{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 7px solid #aaa;
+    border-bottom-color: #a500a5;
+    animation: preload 2s linear Infinite;
+}
+@media screen and (max-width: 1400px){
+    #clock{
+        width: 50vw;
+        height: calc(50vw);
+    }
+    #clock span{
+        font-size: 5vw;
+    }
+    .hr{
+        height: 10px;
+    }
+    .min{
+        height: 7px;
+    }
+    .sec{
+        height: 5px;
+    }
+}
+@media screen and (max-width: 500px){
+    :root{
+        font-size: 12px;
+    }
+    #clock{
+        width: 70vw;
+        height: calc(70vw);
+        bottom: 25px;
+    }
+    #clock span{
+        font-size: 7vw;
+    }
+    .hr{
+        height: 7px;
+    }
+    .min{
+        height: 5px;
+    }
+    .sec{
+        height: 3px;
+    }
+}
